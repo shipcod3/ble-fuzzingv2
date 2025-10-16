@@ -1,0 +1,4 @@
+aalpy>=1.1.7
+scapy>=2.4.5
+colorama
+pyserial
