@@ -48,8 +48,6 @@ I have also added a learning model from my favorite device, Xiaomi :)
 
     **Flashing:** You can use the programmer tool of the [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Connect-for-desktop) application to flash the provided firmware on the [Nordic nRF52840 Dongle](firmware/nRF52840_dongle_firmware.hex) or [Nordic nRF52840 Development Kit](firmware/nrf52840_dk_firmware.hex).
 
-    For the development kit (possibly also for the dongle) you first have to write the [s140_nrf52_6.1.1_softdevice](firmware/s140_nrf52_6.1.1_softdevice.hex) file and then the [nrf52840_dk_firmware](firmware/nrf52840_dk_firmware.hex). 
-
     The firmware is taken from the [SweynTooth project](https://github.com/Matheus-Garbelini/sweyntooth_bluetooth_low_energy_attacks).
 
 2. Python 3.9
