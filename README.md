@@ -25,15 +25,7 @@ I have also added a learning model from my favorite device, Xiaomi :)
 
 
 ##  Content
- - Learned models ([learned-automata/](automata)):
-     - [CC2640R2F (no feature request)](automata/cc2640r2f-no-feature.dot) \[[PDF](automata/pdfs/cc2640r2f-no-feature.pdf)\]
-    - [CC2640R2F (no length request)](automata/cc2640r2f-no-length.dot) \[[PDF](automata/pdfs/cc2640r2f-no-length.pdf)\]
-    - [CC2640R2F (no pairing request)](automata/cc2640r2f-no-pairing.dot) \[[PDF](automata/pdfs/cc2640r2f-no-pairing.pdf)\]
-    - [CC2650](automata/cc2650.dot) \[[PDF](automata/pdfs/cc2650.pdf)\]
-    - [CC2652R1](automata/cc2652r1f.dot) \[[PDF](automata/pdfs/cc2652r1f.pdf)\]
-    - [CYBLE-416045-02](automata/cyble-416045-02.dot) \[[PDF](automata/pdfs/cyble-416045-02.pdf)\]
-    - [CYW43455](automata/cyw43455.dot) \[[PDF](automata/pdfs/cyw43455.pdf)\]
-    - [nRF52832](automata/nRF52832.dot) \[[PDF](automata/pdfs/nRF52832.pdf)\]
+- Xiaomi model
 - Firmware ([firmware/](firmware))
     - [Nordic nRF52840 Dongle](firmware/nRF52840_dongle_firmware.hex)
     - Nordic nRF52840 Development Kit: [s140_nrf52_6.1.1_softdevice](firmware/s140_nrf52_6.1.1_softdevice.hex) + [nrf52840_dk_firmware](firmware/nrf52840_dk_firmware.hex)
