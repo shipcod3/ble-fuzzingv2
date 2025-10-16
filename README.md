@@ -12,7 +12,7 @@ This repository also contains the learned models used in the presented case stud
 
 I love this project, and I have used it for fuzzing some devices for SPIRITCYBER IoT Hackathon, so I decided to fix some errors, like the script was crashing with the following errors:
 
-1. 
+1. The error when launching fuzzing with a learned model
 ```
 TypeError: 'NoneType' object is not iterable
 ```
