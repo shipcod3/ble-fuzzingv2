@@ -1,12 +1,28 @@
 # Stateful Black-Box Fuzzing of BLE Devices Using Automata Learning
 
-This repository contains the supplemental material to the paper 'Stateful Black-Box Fuzzing of Bluetooth Devices Using Automata Learning' by Andrea Pferscher and Bernhard K. Aichernig (Institute of Software Technology, Graz University of Technology).
+This fork repository contains the supplemental material to the paper 'Stateful Black-Box Fuzzing of Bluetooth Devices Using Automata Learning' by Andrea Pferscher and Bernhard K. Aichernig (Institute of Software Technology, Graz University of Technology).
 
-![Framework](images/framework.png)
+<img width="2844" height="942" alt="image" src="https://github.com/user-attachments/assets/80747aeb-2d52-4680-bbba-fc403d45b923" />
 
-This repository provides a learning-based fuzzing framework for Bluetooth Low Energy (BLE) devices. The framework consists of two components. The first component is the learning component which learns the behavioral models of BLE devices. The second component is the stateful fuzzer which fuzz tests the BLE devices based on the previously learned model.
+This repository provides a learning-based fuzzing framework for Bluetooth Low Energy (BLE) devices. The framework consists of two components. The first component is the learning component, which learns the behavioral models of BLE devices. The second component is the stateful fuzzer, which performs fuzz testing on BLE devices based on the previously learned model.
 
-This repository also contains the learned models used in the presented case study in the paper. Furthermore, some exploits and test scripts for anomalies are provided. We also include a script that tests for a possible key downgrade during learning.
+This repository also contains the learned models used in the presented case study in the paper. Furthermore, some exploits and test scripts for anomalies are provided. We also include a script that tests for a possible key downgrade during the learning process.
+
+**EDIT / UPDATE by @shipcod3 for ble-fuzzingv2:**
+
+I love this project, and I have used it for fuzzing some devices for SPIRITCYBER IoT Hackathon, so I decided to fix some errors, like the script was crashing with the following errors:
+
+1. 
+```
+TypeError: 'NoneType' object is not iterable
+```
+
+Fixed with characterizing_outputs() and find_cex().
+
+2. The issues in the fuzzing time (bembang time) are trying to create an LL_FEATURE_REQ packet with an invalid feature set flag. The error occurs because 'le_pwr_class' is not a valid flag in the LL_FEATURE_REQ packet definition. We tried to fix this with MCP + Claude Desktop.
+
+I have also added a learning model from my favorite device, Xiaomi :)
+
 
 ##  Content
  - Learned models ([learned-automata/](automata)):
@@ -82,7 +98,7 @@ Example:
 
     python3 ble_fuzzing.py automata/cyble-416045-02.dot /dev/ttyACM0 00:A0:50:00:00:03 ./ cyble-416045-02
 
-The fuzzer logs all performed queries in a report called `fuzzing_report.txt` which is saved in the provided data directory. A second report `fuzzing_cex_report.txt` is created that contains all input sequences that led to counterexamples, the corresponding observed outputs, and the performed state analysis. Furthermore, for every found counterexample a pcap log is created.
+The fuzzer logs all performed queries in a report called `fuzzing_report.txt`, which is saved in the provided data directory. A second report, `fuzzing_cex_report.txt`, is created that contains all input sequences that led to counterexamples, the corresponding observed outputs, and the performed state analysis. Furthermore, for every found counterexample, a pcap log is created.
 
 ![Fuzzing cex report](images/cex-analysis-output.png)
 
@@ -91,9 +107,9 @@ For BLE devices that should be learned/fuzzed after establishing a valid connect
 ## BLE Exploits
 We provide scripts that enable a simple reproduction of found issues and anomalies.
 
-### (C1) Crash on consecutive connection request
+### (C1) Crash on consecutive connection requests
 
-[Garbelini et al.](https://github.com/Matheus-Garbelini/sweyntooth_bluetooth_low_energy_attacks) presented [CVE-2019-19193](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19193) which leads to crashes due to invalid values in the connection request.
+[Garbelini et al.](https://github.com/Matheus-Garbelini/sweyntooth_bluetooth_low_energy_attacks) presented [CVE-2019-19193](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19193,) which leads to crashes due to invalid values in the connection request.
 
 Execution of exploit:
 
@@ -149,7 +165,7 @@ Execution of exploit:
 
 
 ### (V1) Pairing key size reduction 
-[Antonioli et al.](https://dl.acm.org/doi/10.1145/3394497) showed that the possibility of key downgrades enables the exploit of KNOB attacks.
+[Antonioli et al.](https://dl.acm.org/doi/10.1145/3394497) showed that the possibility of key downgrades enables the exploitation of KNOB attacks.
 
 Execution of exploit:
 
@@ -161,3 +177,4 @@ Execution of exploit:
 - [AALpy](https://github.com/DES-Lab/AALpy): active automata learning library
 - [Scapy](https://github.com/secdev/scapy): BLE package parsing and composition
 - [Colorama](https://github.com/secdev/scapy): colored terminal text
+- Andrea Pferscher and Bernhard K. Aichernig (Institute of Software Technology, Graz University of Technology) > OGs of this repo! Hey, I am just a fork with minor additions.
