@@ -76,8 +76,6 @@ Example:
 
 The program outputs the learning results after a successful learning procedure and saves the learned model to `learned_model.dot` or to a dot-file with the provided filename. Furthermore, a pcap log with all performed queries is saved to `learned_data.pcap` or to a file with the provided filename.
 
-![Learning output](images/learning-output.png)
-
 ### Fuzzing Execution (Step 2/2)
 
 After the learning procedure, the fuzzing procedure of a Bluetooth Low Energy (BLE) device can be executed via ([ble_fuzzing.py](ble_fuzzing.py)). The program requires the serial port name of the nRF52 device and the BLE address of the peripheral device (advertiser) that should be learned. Additionally, a file name for the learned model and the pcap log might be defined.
@@ -89,8 +87,6 @@ Example:
     python3 ble_fuzzing.py automata/cyble-416045-02.dot /dev/ttyACM0 00:A0:50:00:00:03 ./ cyble-416045-02
 
 The fuzzer logs all performed queries in a report called `fuzzing_report.txt`, which is saved in the provided data directory. A second report, `fuzzing_cex_report.txt`, is created that contains all input sequences that led to counterexamples, the corresponding observed outputs, and the performed state analysis. Furthermore, for every found counterexample, a pcap log is created.
-
-<img width="986" height="1212" alt="image" src="https://github.com/user-attachments/assets/e17dffda-99b2-4b38-80c2-dd10dd2f6a97" />
 
 For BLE devices that should be learned/fuzzed after establishing a valid connection, use the [ble_learning_connecting_start.py](ble_learning_connecting_start.py) and [ble_fuzzing_connecting_start.py](ble_fuzzing_connecting_start.py) scripts. 
 
