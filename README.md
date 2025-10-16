@@ -100,7 +100,7 @@ Example:
 
 The fuzzer logs all performed queries in a report called `fuzzing_report.txt`, which is saved in the provided data directory. A second report, `fuzzing_cex_report.txt`, is created that contains all input sequences that led to counterexamples, the corresponding observed outputs, and the performed state analysis. Furthermore, for every found counterexample, a pcap log is created.
 
-![Fuzzing cex report](images/cex-analysis-output.png)
+<img width="986" height="1212" alt="image" src="https://github.com/user-attachments/assets/e17dffda-99b2-4b38-80c2-dd10dd2f6a97" />
 
 For BLE devices that should be learned/fuzzed after establishing a valid connection, use the [ble_learning_connecting_start.py](ble_learning_connecting_start.py) and [ble_fuzzing_connecting_start.py](ble_fuzzing_connecting_start.py) scripts. 
 
